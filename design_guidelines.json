@@ -1,0 +1,161 @@
+{
+  "app_name": "MacroLens",
+  "personality": "7 Dark-First Utility with 6 Glass / Luxe surfaces",
+  "personality_one_liner": "A striking, cinematic command center that turns calorie tracking into a premium, performance-oriented experience.",
+  "color": {
+    "surface": "#0A0C10",
+    "onSurface": "#FFFFFF",
+    "surfaceSecondary": "#14171F",
+    "onSurfaceSecondary": "#949BAE",
+    "surfaceTertiary": "#1F232E",
+    "onSurfaceTertiary": "#767C8F",
+    "surfaceInverse": "#FFFFFF",
+    "onSurfaceInverse": "#000000",
+    "brand": "#FF5E3A",
+    "brandPrimary": "#FF5E3A",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#E04F2E",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "rgba(255, 94, 58, 0.12)",
+    "onBrandTertiary": "#FF8A6F",
+    "success": "#34D399",
+    "onSuccess": "#022C22",
+    "warning": "#FBBF24",
+    "onWarning": "#451A03",
+    "error": "#F87171",
+    "onError": "#450A0A",
+    "border": "#2A2F3D",
+    "borderStrong": "#3F4556",
+    "divider": "#1F232E"
+  },
+  "typography": {
+    "displayFontFamily": "Barlow Condensed",
+    "textFontFamily": "Manrope",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous vertical breathing room for cinematic feel; tight structured spacing for metric clusters.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "bottom_tabs",
+  "icon_set": "Ionicons",
+  "glassmorphism": {
+    "enabled": "true",
+    "do's": [
+      "Bottom tab bar (frosted over dark background)",
+      "Sticky headers over scrolling content",
+      "Featured hero card overlaying the background image",
+      "Floating Action Buttons (FAB)"
+    ],
+    "dont's": [
+      "List rows",
+      "Dense data form inputs",
+      "Body content regions"
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Dashboard",
+      "purpose": "Daily command center displaying today's calorie ring, macro breakdowns, and quick-add actions.",
+      "states": {
+        "loading": "Centered pulse animation using brand color.",
+        "empty": "Glass-morphic card prompting the first meal log of the day.",
+        "error": "Readable error message overlay on the hero card with a retry button."
+      },
+      "layout": "Hero section at the top featuring a glass-morphic card with a large circular calorie progress arc, layered over the athletic background image with a vertical gradient scrim (transparent to surface). Below this, a 3-column grid for macros (Protein, Carbs, Fat) using surfaceSecondary cards. A sticky floating action button (FAB) for AI photo/barcode logging at the bottom right. Recent meals displayed in a vertical list at the bottom."
+    },
+    {
+      "name": "FoodLogging",
+      "purpose": "Frictionless meal entry via AI camera mesh, barcode scan, or manual text search.",
+      "states": {
+        "loading": "Camera viewfinder with a scanning mesh animation overlay.",
+        "empty": "Awaiting scan or camera focus.",
+        "error": "Error toast prompting user to enter manually or rescan."
+      },
+      "layout": "Full-bleed camera view acting as the primary background. A frosted glass bottom sheet overlays the lower half of the camera, containing a segmented control (AI Scan, Barcode, Manual), a search input, and dynamic scanning guides (reticle/mesh overlay on the camera). Found items populate in a sticky sheet at the bottom."
+    },
+    {
+      "name": "ProgressTracker",
+      "purpose": "Track water intake via a visual glass counter and visualize weight progress over time.",
+      "states": {
+        "loading": "Skeleton lines for chart loading.",
+        "empty": "Illustration of a water droplet and empty chart state with prompt to add first weight entry.",
+        "error": "Chart error state with a reload icon."
+      },
+      "layout": "Split layout. Top section features a large area chart for weight progress with a glowing brandPrimary line and a translucent gradient fill. Bottom section features a modular water tracker with a large interactive counter (e.g., '5 / 8 Glasses') and quick +1/-1 glass buttons rendered on a surfaceSecondary card."
+    },
+    {
+      "name": "Profile",
+      "purpose": "Manage personal targets, view stats, and access settings.",
+      "states": {
+        "loading": "Skeleton placeholders for profile metrics.",
+        "empty": "Prompt to set up Google login or complete profile details.",
+        "error": "Settings load error state with retry."
+      },
+      "layout": "Profile header with user avatar (fallback to initials) and Google login status. A stacked list of editable goal metrics (Target Weight, Daily Calories, Macro Splits) presented as settings rows with tinted icon containers (brandTertiary rounded square). Form inputs use surfaceTertiary with labels placed above inputs."
+    }
+  ],
+  "images": {
+    "home_hero_bg": {
+      "url": "https://images.unsplash.com/photo-1534201640835-c6d455b79901?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxhdGhsZXRpYyUyMHJ1bm5pbmclMjB0cmFjayUyMGRhcmslMjBjaW5lbWF0aWN8ZW58MHx8fG9yYW5nZXwxNzg2MjIyOTg5fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Aerial view of a field with tracks in the sand, orange and dark cinematic tones."
+    },
+    "meal_prep_placeholder": {
+      "url": "https://images.unsplash.com/photo-1666819691716-827f78d892f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwbWVhbCUyMHByZXAlMjB0b3AlMjB2aWV3JTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzg2MjIyOTg5fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "A couple trays of food for healthy meal prep on a dark background."
+    },
+    "user_avatar": {
+      "url": "https://images.unsplash.com/photo-1729280924877-4750c0dba51e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwcm9maWxlJTIwcGljdHVyZSUyMHJ1bm5pbmclMjBvdXRkb29yfGVufDB8fHx8MTc4NjIyMjk5OXww&ixlib=rb-4.1.0&q=85",
+      "alt": "A man running through the woods in a blue shirt."
+    }
+  },
+  "haptics": {
+    "events": {
+      "add_water_glass": "impactLight",
+      "log_meal_success": "notificationSuccess",
+      "tab_change": "selection",
+      "primary_cta_press": "impactMedium",
+      "barcode_scan_success": "notificationSuccess"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Dark-First Utility + Glass / Luxe surfaces fusion. The interface should feel like a cinematic command center, avoiding the flat corporate blue/white look of traditional fitness apps.",
+    "Implement the home_hero_bg image at the top of the dashboard with a mandatory top-to-bottom gradient scrim (transparent to surface color) to ensure all overlaid text and glass components remain highly readable.",
+    "For the daily calorie ring, use a large, striking progress arc on a frosted glass card overlay. Ensure the macros (Protein, Carbs, Fat) are split into a 3-column grid below it.",
+    "Food Logging screen must treat the camera as a full-bleed background, with a frosted glass bottom sheet holding the AI scan/barcode controls.",
+    "Never use raw hex colors in components; exclusively map them to the color tokens provided. Do not use any blues, purples, or indigo hues.",
+    "Ensure generous padding (`lg` or `xl`) around main content blocks but keep metrics tightly grouped for glanceability.",
+    "Use 'Barlow Condensed' for prominent metrics/numbers and 'Manrope' for body copy. Cap font weight at 500."
+  ]
+}
