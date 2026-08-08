@@ -1,24 +1,28 @@
 {
   "expo": {
-    "name": "frontend",
+    "name": "MacroLens",
     "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "frontend",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.emergent.workouttracker.r4q86a"
+      "bundleIdentifier": "com.emergent.workouttracker.r4q86a",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Scan meals and barcodes to log nutrition"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#0A0C10"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.emergent.workouttracker.r4q86a"
+      "package": "com.emergent.workouttracker.r4q86a",
+      "permissions": ["android.permission.CAMERA"]
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +37,13 @@
           "image": "./assets/images/splash-image.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#000000"
+          "backgroundColor": "#0A0C10"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Scan meals and barcodes to log nutrition"
         }
       ]
     ],
